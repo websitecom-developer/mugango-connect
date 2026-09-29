@@ -1,0 +1,885 @@
+<!-- ========================================= -->
+<!-- MUGANGO NEWS — LUXURY HEADLINE SLIDER    -->
+<!-- ========================================= -->
+
+<section class="mn-luxury-news">
+
+  <!-- TOP BAR -->
+  <div class="mn-header-top">
+
+    <div class="mn-logo-text">
+      <span class="mn-live"></span>
+      MUGANGO NEWS
+    </div>
+
+    <div class="mn-breaking">
+      BREAKING
+    </div>
+
+  </div>
+
+
+  <!-- GOLD DIVIDER -->
+  <div class="mn-gold-divider"></div>
+
+
+  <!-- HEADLINE -->
+  <a id="headline"
+     class="mn-headline"
+     href="#"
+     target="_blank"
+     rel="noopener noreferrer">
+    Loading latest news...
+  </a>
+
+
+  <!-- DATE -->
+  <div id="time" class="mn-time">
+    Loading...
+  </div>
+
+
+  <!-- PROGRESS -->
+  <div class="mn-bottom">
+
+    <div class="mn-progress">
+      <div id="progress-bar"></div>
+    </div>
+
+    <div id="counter" class="mn-counter">
+      0 / 0
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<style>
+
+/* ========================================= */
+/* MAIN LUXURY BOX                           */
+/* ========================================= */
+
+.mn-luxury-news {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(212,175,55,.15),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #030303,
+      #101010 50%,
+      #030303
+    );
+
+  border: 1px solid
+    rgba(212,175,55,.55);
+
+  border-left: 5px solid
+    #d4af37;
+
+  border-radius: 16px;
+
+  padding: 21px;
+
+  margin: 20px 0;
+
+  box-shadow:
+
+    0 15px 40px
+    rgba(0,0,0,.75),
+
+    inset 0 0 30px
+    rgba(212,175,55,.035);
+
+}
+
+
+/* ========================================= */
+/* TOP BAR                                   */
+/* ========================================= */
+
+.mn-header-top {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 13px;
+
+}
+
+
+/* ========================================= */
+/* LOGO TEXT                                 */
+/* ========================================= */
+
+.mn-logo-text {
+
+  color: #d4af37;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 11px;
+
+  font-weight: bold;
+
+  letter-spacing: 2.8px;
+
+}
+
+
+/* ========================================= */
+/* LIVE DOT                                  */
+/* ========================================= */
+
+.mn-live {
+
+  display: inline-block;
+
+  width: 8px;
+
+  height: 8px;
+
+  margin-right: 7px;
+
+  background: #d4af37;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 7px #d4af37,
+    0 0 14px
+    rgba(212,175,55,.6);
+
+  animation:
+    mn-live-pulse 1.5s infinite;
+
+}
+
+
+@keyframes mn-live-pulse {
+
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: .35;
+    transform: scale(.75);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+}
+
+
+/* ========================================= */
+/* BREAKING LABEL                            */
+/* ========================================= */
+
+.mn-breaking {
+
+  color: #d4af37;
+
+  border:
+    1px solid
+    rgba(212,175,55,.55);
+
+  border-radius: 30px;
+
+  padding: 5px 10px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  font-weight: bold;
+
+  letter-spacing: 1.7px;
+
+}
+
+
+/* ========================================= */
+/* GOLD DIVIDER                              */
+/* ========================================= */
+
+.mn-gold-divider {
+
+  height: 1px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #d4af37,
+      rgba(212,175,55,.3),
+      transparent
+    );
+
+  margin-bottom: 16px;
+
+}
+
+
+/* ========================================= */
+/* HEADLINE                                  */
+/* ========================================= */
+
+.mn-headline {
+
+  display: block;
+
+  min-height: 66px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 23px;
+
+  font-weight: bold;
+
+  line-height: 1.4;
+
+  letter-spacing: .15px;
+
+  opacity: 1;
+
+  transition:
+    opacity .6s ease,
+    color .3s ease;
+
+}
+
+
+.mn-headline:hover {
+
+  color: #d4af37;
+
+}
+
+
+/* ========================================= */
+/* DATE                                      */
+/* ========================================= */
+
+.mn-time {
+
+  color: #888;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  margin-top: 9px;
+
+}
+
+
+/* ========================================= */
+/* BOTTOM                                    */
+/* ========================================= */
+
+.mn-bottom {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 13px;
+
+}
+
+
+/* ========================================= */
+/* PROGRESS BAR                              */
+/* ========================================= */
+
+.mn-progress {
+
+  flex: 1;
+
+  height: 2px;
+
+  background: #292929;
+
+  overflow: hidden;
+
+  border-radius: 5px;
+
+}
+
+
+#progress-bar {
+
+  height: 100%;
+
+  width: 0%;
+
+  background: #d4af37;
+
+  transition:
+    width 15s linear;
+
+}
+
+
+/* ========================================= */
+/* COUNTER                                   */
+/* ========================================= */
+
+.mn-counter {
+
+  color: #d4af37;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  min-width: 35px;
+
+  text-align: right;
+
+}
+
+
+/* ========================================= */
+/* MOBILE                                    */
+/* ========================================= */
+
+@media (max-width: 600px) {
+
+  .mn-luxury-news {
+
+    padding: 17px;
+
+  }
+
+  .mn-headline {
+
+    font-size: 19px;
+
+  }
+
+  .mn-logo-text {
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+  }
+
+}
+
+</style>
+
+
+
+<script>
+
+/* ========================================= */
+/* GOOGLE SHEETS API                         */
+/* ========================================= */
+
+const SHEET_API =
+"https://script.google.com/macros/s/AKfycbzFfVZpPKDJsYYesVr0pQ-b_dAZpvGBeRaSZse1XvPe2mCRF3ZRnNdeDm6n-YyBlKNR/exec";
+
+
+/* ========================================= */
+/* VARIABLES                                 */
+/* ========================================= */
+
+let allNews = [];
+
+let currentIndex = 0;
+
+let headlineTimer;
+
+
+/* ========================================= */
+/* LOAD ALL HEADLINES                        */
+/* ========================================= */
+
+async function loadNews() {
+
+  try {
+
+    const response = await fetch(
+      SHEET_API
+    );
+
+
+    const data =
+      await response.json();
+
+
+    console.log(
+      "Mugango News:",
+      data
+    );
+
+
+    if (
+      !data.success ||
+      !Array.isArray(data.news) ||
+      data.news.length === 0
+    ) {
+
+      document.getElementById(
+        "headline"
+      ).textContent =
+        "No headlines available";
+
+      return;
+
+    }
+
+
+    /* SAVE ALL HEADLINES */
+
+    allNews =
+      data.news;
+
+
+    /* START */
+
+    currentIndex = 0;
+
+    showHeadline();
+
+
+    /* CHANGE EVERY 15 SECONDS */
+
+    clearInterval(
+      headlineTimer
+    );
+
+
+    headlineTimer =
+      setInterval(
+        nextHeadline,
+        15000
+      );
+
+
+  }
+
+  catch(error) {
+
+    console.error(
+      "News error:",
+      error
+    );
+
+
+    document.getElementById(
+      "headline"
+    ).textContent =
+      "Unable to load latest news";
+
+  }
+
+}
+
+
+/* ========================================= */
+/* SHOW HEADLINE                             */
+/* ========================================= */
+
+function showHeadline() {
+
+  if (
+    allNews.length === 0
+  ) {
+
+    return;
+
+  }
+
+
+  const story =
+    allNews[currentIndex];
+
+
+  const headline =
+    document.getElementById(
+      "headline"
+    );
+
+
+  const time =
+    document.getElementById(
+      "time"
+    );
+
+
+  const counter =
+    document.getElementById(
+      "counter"
+    );
+
+
+  const progress =
+    document.getElementById(
+      "progress-bar"
+    );
+
+
+  /* FADE OUT */
+
+  headline.style.opacity = "0";
+
+
+  setTimeout(function() {
+
+
+    /* HEADLINE */
+
+    headline.textContent =
+
+      story.headline ||
+      story.Headline ||
+      "Latest Mugango News";
+
+
+    /* LINK */
+
+    headline.href =
+      story.link || "#";
+
+
+    /* DATE */
+
+    if (story.date) {
+
+      const date =
+        new Date(
+          story.date
+        );
+
+
+      time.textContent =
+        "Updated • " +
+        (
+          isNaN(date)
+          ? story.date
+          : date.toLocaleString()
+        );
+
+    }
+
+    else {
+
+      time.textContent =
+        "Latest update";
+
+    }
+
+
+    /* COUNTER */
+
+    counter.textContent =
+
+      (currentIndex + 1) +
+      " / " +
+      allNews.length;
+
+
+    /* RESET PROGRESS */
+
+    progress.style.transition =
+      "none";
+
+    progress.style.width =
+      "0%";
+
+
+    setTimeout(function() {
+
+      progress.style.transition =
+        "width 15s linear";
+
+      progress.style.width =
+        "100%";
+
+    }, 50);
+
+
+    /* FADE IN */
+
+    headline.style.opacity =
+      "1";
+
+
+  }, 500);
+
+}
+
+
+/* ========================================= */
+/* NEXT HEADLINE                             */
+/* ========================================= */
+
+function nextHeadline() {
+
+  currentIndex++;
+
+
+  if (
+    currentIndex >=
+    allNews.length
+  ) {
+
+    currentIndex = 0;
+
+  }
+
+
+  showHeadline();
+
+}
+
+
+/* ========================================= */
+/* START                                     */
+/* ========================================= */
+
+loadNews();
+
+</script>
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mugango News</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#070707;
+    color:#fff;
+    text-align:center;
+}
+
+header{
+    background:linear-gradient(135deg,#000,#1b1b1b);
+    padding:30px 20px;
+    border-bottom:3px solid gold;
+}
+
+h1{
+    color:gold;
+    font-size:38px;
+    letter-spacing:2px;
+}
+
+.tagline{
+    color:#ddd;
+    margin-top:8px;
+}
+
+#datetime{
+    margin:20px auto;
+    color:gold;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.container{
+    padding:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:green;
+    color:#FFFFFF;
+    padding:15px 35px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.facebook{
+    display:inline-block;
+    background:#1877F2;
+    color:white;
+    padding:14px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    margin-top:15px;
+}
+
+.contact{
+    margin-top:35px;
+}
+
+.contact a{
+    color:gold;
+    text-decoration:none;
+}
+
+.subscribe{
+    margin-top:40px;
+}
+
+input{
+    width:90%;
+    max-width:350px;
+    padding:12px;
+    border:1px solid gold;
+    border-radius:25px;
+    background:#111;
+    color:white;
+}
+
+button{
+    margin-top:12px;
+    padding:12px 28px;
+    border:none;
+    border-radius:25px;
+    background:gold;
+    color:black;
+    font-weight:bold;
+}
+
+#message{
+    color:gold;
+    margin-top:12px;
+}
+
+footer{
+    margin-top:50px;
+    padding:20px;
+    border-top:1px solid gold;
+    color:#aaa;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>MUGANGO NEWS</h1>
+    <p class="tagline">Trusted News. Local Voices. Global Stories.</p>
+</header>
+
+<div id="datetime"></div>
+
+<div class="container">
+
+    <a href="mugangoNow.html" 
+" class="btn"> Read Today's News</a>
+
+    <div class="contact">
+        <h2 style="color:gold;">Email Contact</h2>
+        <p>
+            <a href="mailto:skyeye1969@gmail.com">
+                skyeye1969@gmail.com
+            </a>
+        </p>
+    </div>
+
+    <div class="contact">
+        <h2 style="color:gold;">Follow Us</h2>
+        <a class="facebook"
+           href="https://www.facebook.com/profile.php?id=61594397896663"
+           target="_blank">
+           Follow Mugango News on Facebook
+        </a>
+    </div>
+
+    <div class="subscribe">
+        <h2 style="color:gold;">Subscribe by Email</h2>
+
+        <input type="email" id="email"
+               placeholder="Enter your email">
+
+        <br>
+
+        <button onclick="subscribeEmail()">Subscribe</button>
+
+        <p id="message"></p>
+    </div>
+
+</div>
+
+<footer>
+    © <span id="year"></span> Mugango News. All Rights Reserved.
+</footer>
+
+<script>
+  
+// Automatic Date & Time
+function updateDateTime(){
+    const now = new Date();
+
+    const options = {
+        weekday:"long",
+        day:"numeric",
+        month:"long",
+        year:"numeric",
+        hour:"numeric",
+        minute:"2-digit",
+        second:"2-digit"
+    };
+
+    document.getElementById("datetime").innerHTML =
+        now.toLocaleString("en-KE", options);
+
+    document.getElementById("year").innerHTML =
+        now.getFullYear();
+}
+
+setInterval(updateDateTime,1000);
+updateDateTime();
+
+// Email Subscribe
+function subscribeEmail(){
+    const email = document.getElementById("email").value;
+
+    if(email===""){
+        document.getElementById("message").innerHTML =
+        "Please enter your email.";
+    }else{
+        document.getElementById("message").innerHTML =
+        "Thank you for subscribing to Mugango News!";
+        document.getElementById("email").value="";
+    }
+}
+  </script>
+</body>
+</html>
